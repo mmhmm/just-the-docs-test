@@ -1,10 +1,13 @@
-title: Just the Docs Template
+title: WELSH Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
 url: https://just-the-docs.github.io
+baseurl: "/cy"
 
 aux_links:
+  Home: /en/index.html
+  Cartref: /cy/index.html
   GitHub: https://mmhmm.github.com/just-the-docs-test
 
 sass:
