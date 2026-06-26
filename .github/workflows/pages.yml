@@ -45,16 +45,38 @@ jobs:
 #        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
 #        env:
 #          JEKYLL_ENV: production
-      - name: Build /en with Jekyll
-        # Outputs to the './_site' directory by default
-        run: cd ./en && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-      - name: Build /cy with Jekyll
-        # Outputs to the './_site' directory by default
-        run: cd ./cy && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
+#      - name: Build /en with Jekyll
+#        # Outputs to the './_site' directory by default
+#        run: cd ./en && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+#        env:
+#          JEKYLL_ENV: production
+#      - name: Build /cy with Jekyll
+#        # Outputs to the './_site' directory by default
+#        run: cd ./cy && bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+#        env:
+#          JEKYLL_ENV: production
+      - name: Jekyll build
+        run: |
+          git branch
+          dst=$(pwd)/${{ inputs.destination }}
+          # tree .
+          cd ${{ inputs.source }}
+          pwd
+          #python prepare.py ${{ inputs.baseurl }} # insert headers, change md relative link path to html ...
+          bundle exec jekyll build \
+            --config ./en/_config.yml \
+            --source ./en/ \
+            --destination $dst/en/ \
+            --baseurl ${{ inputs.baseurl }}en/
+          bundle exec jekyll build \
+            --config ./cy/_config.yml \
+            --source ./cy/ \
+            --destination $dst/cy/ \
+            --baseurl ${{ inputs.baseurl }}cy/
+          cp -s $dst/cy/index.html $dst/
+
+          # tree $dst
+          cd -
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v5
