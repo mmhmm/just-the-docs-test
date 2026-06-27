@@ -67,14 +67,14 @@ jobs:
           bundle exec jekyll build \
             --config ./en/_config.yml \
             --source ./en/ \
-            --destination _site/en/ \
-            --baseurl ${{ site.baseurl }}
+            --destination _site/en/
+          #  --baseurl ${{ site.baseurl }}
           #  --baseurl ${{ inputs.baseurl }}en/
           bundle exec jekyll build \
             --config ./cy/_config.yml \
             --source ./cy/ \
-            --destination _site/cy/ \
-            --baseurl ${{ site.baseurl }}
+            --destination _site/cy/
+          #  --baseurl ${{ site.baseurl }}
           echo "*** PWD ***"
           pwd
           echo "*** find _site ***"
