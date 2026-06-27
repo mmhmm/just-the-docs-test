@@ -2,8 +2,8 @@ title: ENGLISH Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
-baseurl: "/en"
+url: https://mmhmm.github.io
+baseurl: /just-the-docs-test/en
 
 aux_links:
   Home: /en/index.html
