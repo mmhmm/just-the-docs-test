@@ -75,12 +75,12 @@ jobs:
           #  --destination $dst/cy/ \
           #  --baseurl ${{ inputs.baseurl }}cy/
          # cp -s $dst/cy/index.html $dst/
-          bundle exec jekyll build \
-            --config ./en/_config.yml
-            --source ./en/
-          bundle exec jekyll build \
-            --config ./cy/_config.yml
-            --source ./cy/
+         bundle exec jekyll build \
+           --config ./en/_config.yml
+           --source ./en/
+         bundle exec jekyll build \
+           --config ./cy/_config.yml
+           --source ./cy/
           # tree $dst
           #cd -
       - name: Upload artifact
