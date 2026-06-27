@@ -17,6 +17,7 @@ Other than that, you're free to customize sites that you create with this templa
 [Browse our documentation][Just the Docs] to learn more about how to use this theme.
 
 Non-whitespace edit!
+And another
 
 To get started with creating a site, simply:
 
