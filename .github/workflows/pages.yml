@@ -58,26 +58,31 @@ jobs:
       - name: Jekyll build
         run: |
           #git branch
-          dst=$(pwd)/${{ inputs.destination }}
-          echo "*** ${dst} ***"
+          #dst=$(pwd)/${{ inputs.destination }}
+          #echo "*** ${dst} ***"
           # tree .
           #cd ${{ inputs.source }}
           # pwd
           #python prepare.py ${{ inputs.baseurl }} # insert headers, change md relative link path to html ...
+          #bundle exec jekyll build \
+          #  --config ./en/_config.yml \
+          #  --source ./en/ \
+          #  --destination $dst/en/ \
+          #  --baseurl ${{ inputs.baseurl }}en/
+          #bundle exec jekyll build \
+          #  --config ./cy/_config.yml \
+          #  --source ./cy/ \
+          #  --destination $dst/cy/ \
+          #  --baseurl ${{ inputs.baseurl }}cy/
+         # cp -s $dst/cy/index.html $dst/
           bundle exec jekyll build \
-            --config ./en/_config.yml \
-            --source ./en/ \
-            --destination $dst/en/ \
-            --baseurl ${{ inputs.baseurl }}en/
+            --config ./en/_config.yml
+            --source ./en/
           bundle exec jekyll build \
-            --config ./cy/_config.yml \
-            --source ./cy/ \
-            --destination $dst/cy/ \
-            --baseurl ${{ inputs.baseurl }}cy/
-          cp -s $dst/cy/index.html $dst/
-
+            --config ./cy/_config.yml
+            --source ./cy/
           # tree $dst
-          cd -
+          #cd -
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v5
