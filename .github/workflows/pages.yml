@@ -75,8 +75,12 @@ jobs:
             --destination _site/cy/
           echo "*** PWD ***"
           pwd
-          echo "*** find . -type d ***"
-          find . -type d
+          echo "*** find _site ***"
+          find _site 
+          echo "*** find cy ***"
+          find cy
+          echo "*** find en ***"
+          find en
          #   --baseurl ${{ inputs.baseurl }}cy/
          # cp -s $dst/cy/index.html $dst/
          #bundle exec jekyll build \
