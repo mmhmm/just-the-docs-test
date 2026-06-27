@@ -73,6 +73,10 @@ jobs:
             --config ./cy/_config.yml \
             --source ./cy/ \
             --destination _site/cy/
+          echo "*** PWD ***"
+          pwd
+          echo "*** find . -type d ***"
+          find . -type d
          #   --baseurl ${{ inputs.baseurl }}cy/
          # cp -s $dst/cy/index.html $dst/
          #bundle exec jekyll build \
